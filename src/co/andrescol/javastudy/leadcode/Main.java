@@ -1,7 +1,5 @@
 package co.andrescol.javastudy.leadcode;
 
-import java.lang.reflect.InvocationTargetException;
-
 public class Main {
     public static void main(String[] args) {
         short week = Short.parseShort(args[0]);
