@@ -1,4 +1,4 @@
-package co.andrescol.javastudy.leadcode;
+package co.andrescol.leadcode;
 
 @FunctionalInterface
 public interface LeadCodeRunnable {

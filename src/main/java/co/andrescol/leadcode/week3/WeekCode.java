@@ -1,6 +1,6 @@
-package co.andrescol.javastudy.leadcode.week3;
+package co.andrescol.leadcode.week3;
 
-import co.andrescol.javastudy.leadcode.LeadCodeRunnable;
+import co.andrescol.leadcode.LeadCodeRunnable;
 
 import java.util.Collection;
 import java.util.Collections;

@@ -1,6 +1,4 @@
-package co.andrescol.javastudy.leadcode;
-
-import java.lang.reflect.InvocationTargetException;
+package co.andrescol.leadcode;
 
 public class Main {
     public static void main(String[] args) {
