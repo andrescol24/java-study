@@ -1,4 +1,4 @@
-package co.andrescol.multithread1.mutualexclusion;
+package co.andrescol.multithread1.mutualexclusion.shopper;
 
 public class Shopper implements GarlicCountable {
 

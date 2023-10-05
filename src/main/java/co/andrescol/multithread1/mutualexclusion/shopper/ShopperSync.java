@@ -1,4 +1,4 @@
-package co.andrescol.multithread1.mutualexclusion;
+package co.andrescol.multithread1.mutualexclusion.shopper;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

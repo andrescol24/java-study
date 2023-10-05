@@ -1,5 +1,7 @@
 package co.andrescol.multithread1.mutualexclusion;
 
+import co.andrescol.multithread1.mutualexclusion.shopper.*;
+
 public class MutualExclusion {
     public static void main(String[] args) throws InterruptedException {
         /*
@@ -16,11 +18,11 @@ public class MutualExclusion {
          */
         runShoppers(new ShopperSync(), "With Lock from concurrent");
 
-        /*
-        Using Atomic Integer
-         */
+        // Using atomic
         runShoppers(new AtomicShopper(), "With AtomicInteger");
 
+        // Using synchronized method
+        runShoppers(new SynchronizedShopper(), "Synchronized method");
     }
 
     private static void runShoppers(GarlicCountable garlicCountable, String message) throws InterruptedException {
