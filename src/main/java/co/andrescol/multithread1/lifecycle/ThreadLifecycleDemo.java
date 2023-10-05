@@ -1,4 +1,4 @@
-package co.andrescol.multithread.lifecycle;
+package co.andrescol.multithread1.lifecycle;
 
 /**
  * Two threads cooking soup

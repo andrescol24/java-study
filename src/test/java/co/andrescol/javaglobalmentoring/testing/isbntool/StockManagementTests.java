@@ -4,10 +4,9 @@ import co.andrescol.javaglobalmentoring.testing.isbntool.dto.Book;
 import co.andrescol.javaglobalmentoring.testing.isbntool.service.ExternalISBNDataService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import static org.mockito.Mockito.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.mockito.Mockito.*;
 
 public class StockManagementTests {
 

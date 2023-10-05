@@ -1,4 +1,4 @@
-package co.andrescol.multithread.deamon;
+package co.andrescol.multithread1.deamon;
 
 /**
  * Barron finishes cooking while Olivia cleans
