@@ -1,24 +1,21 @@
 package co.andrescol.multithread1.mutualexclusion;
 
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class ShopperSync implements GarlicCountable {
+public class AtomicShopper implements GarlicCountable {
 
-    private static int GARLIC_COUNT = 0;
-    private static final Lock lock = new ReentrantLock();
-
+    private static final AtomicInteger GARLIC_COUNT = new AtomicInteger();
     @Override
     public void run() {
         for(int i = 0; i < 1_000_000; i++) {
-            lock.lock();
-            GARLIC_COUNT++;
-            lock.unlock();
+            GARLIC_COUNT.incrementAndGet();
         }
     }
 
     @Override
     public int getGarlicCount() {
-        return GARLIC_COUNT;
+        return GARLIC_COUNT.get();
     }
 }
