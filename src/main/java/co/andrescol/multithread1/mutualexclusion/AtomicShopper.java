@@ -1,8 +1,6 @@
 package co.andrescol.multithread1.mutualexclusion;
 
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 public class AtomicShopper implements GarlicCountable {
 
