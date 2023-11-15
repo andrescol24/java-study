@@ -6,6 +6,12 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ShopperSync implements GarlicCountable {
 
     private static int GARLIC_COUNT = 0;
+
+    /**
+     * Locks have one problem, if a thread locks the mutex several times, and it does not unlock it, other threads can not use the mutex,
+     * (the name of this problem is deadlock).
+     * Reentrant mutex can be blocked multiple times and must be unlocked the same times
+     */
     private static final Lock lock = new ReentrantLock();
 
     @Override
