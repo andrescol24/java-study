@@ -19,7 +19,7 @@ public class ShopperTryLock extends Shopper {
     public void run() {
         while(ITEMS_ON_NOTE_PAD <= 20) {
             if(this.itemsToAdd > 0 && pencil.tryLock()) {
-                this.addItemsToNotepad();
+                this.addItemsToNotepadAndCleanList();
                 pencil.unlock();
             } else {
                 this.goToShop();

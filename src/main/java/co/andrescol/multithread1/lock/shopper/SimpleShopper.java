@@ -16,7 +16,7 @@ public class SimpleShopper extends Shopper {
         while(ITEMS_ON_NOTE_PAD <= 20) {
             if(this.itemsToAdd > 0) {
                 pencil.lock();
-                this.addItemsToNotepad();
+                this.addItemsToNotepadAndCleanList();
                 pencil.unlock();
             } else {
                 this.goToShop();

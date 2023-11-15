@@ -11,7 +11,7 @@ public abstract class Shopper implements Runnable {
 
     abstract void incrementItemsInNotepad(int amount);
 
-    protected void addItemsToNotepad() {
+    protected void addItemsToNotepadAndCleanList() {
         try {
             incrementItemsInNotepad(this.itemsToAdd);
             System.out.println(this.name + " added " + this.itemsToAdd + " item(s) to notedpad");
