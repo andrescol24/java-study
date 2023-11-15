@@ -5,6 +5,8 @@ import co.andrescol.multithread1.lock.shopper.ShopperTryLock;
 import co.andrescol.multithread1.lock.shopper.SimpleShopper;
 
 import java.lang.reflect.Constructor;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
@@ -23,15 +25,21 @@ public class Main {
 
     }
 
-    private static void callShoppers(Shopper shopper1, Shopper shopper2) {
+    private static void callShoppers(Shopper... shoppers) {
         try {
-            // Reflection Constructor<T> constructor = (Constructor<T>) shopper.getConstructor(String.class);
-            Thread andres = new Thread(shopper1);
-            Thread melba = new Thread(shopper2);
-            andres.start();
-            melba.start();
-            andres.join();
-            melba.join();
+            List<Thread> threads = new ArrayList<>();
+            for(Shopper shopper : shoppers) {
+                // Reflection Constructor<T> constructor = (Constructor<T>) shopper.getConstructor(String.class);
+                Thread andres = new Thread(shopper);
+                andres.start();
+                threads.add(andres);
+            }
+
+            for(Thread thread : threads) {
+                thread.join();
+            }
+
+
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
