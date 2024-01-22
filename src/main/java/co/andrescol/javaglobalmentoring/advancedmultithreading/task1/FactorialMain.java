@@ -1,4 +1,4 @@
-package co.andrescol.javaglobalmentoring.advancedmultithreading;
+package co.andrescol.javaglobalmentoring.advancedmultithreading.task1;
 
 import co.andrescol.timecalculator.TimeCalculator;
 
@@ -12,12 +12,13 @@ public class FactorialMain {
         System.out.println(processors + " processor" + (processors != 1 ? "s are " : " is ") + "available");
         List<Integer> factorials = Arrays.asList(25, 100_000);
         int times = 100;
-        if(args[0].equals("without")) {
-            runTimerCalculator("Factorial without FJP of ", FactorialMain::toFactorialTaskWithoutFJP, factorials, times);
-        } else if(args[0].equals("with")) {
-            runTimerCalculator("Factorial with FJP of ", FactorialMain::toFactorialTaskWithFJP, factorials, times);
-        } else if(args[0].equals("javaexample")) {
-            runTimerCalculator("Factorial with Java Example of ", FactorialMain::toJavaExample, factorials, times);
+        switch (args[0]) {
+            case "without" ->
+                    runTimerCalculator("Factorial without FJP of ", FactorialMain::toFactorialTaskWithoutFJP, factorials, times);
+            case "with" ->
+                    runTimerCalculator("Factorial with FJP of ", FactorialMain::toFactorialTaskWithFJP, factorials, times);
+            case "javaexample" ->
+                    runTimerCalculator("Factorial with Java Example of ", FactorialMain::toJavaExample, factorials, times);
         }
     }
 
@@ -34,10 +35,10 @@ public class FactorialMain {
     }
 
     private static Runnable toFactorialTaskWithFJP(int x) {
-        return () -> new FactorialTask(x).invoke();
+        return () -> new FactorialTask(x, true).invoke();
     }
 
     private static Runnable toJavaExample(int x) {
-        return () -> new FactorialJavaExample.JavaExampleFactorialTask(1, x).invoke();
+        return () -> new FactorialTask(x, false).invoke();
     }
 }

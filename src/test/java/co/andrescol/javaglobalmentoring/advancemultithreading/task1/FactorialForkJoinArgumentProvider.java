@@ -1,4 +1,4 @@
-package co.andrescol.javaglobalmentoring.advancemultithreading;
+package co.andrescol.javaglobalmentoring.advancemultithreading.task1;
 
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.provider.Arguments;
